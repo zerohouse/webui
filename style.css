@@ -4,6 +4,15 @@ body{
 	margin: 0;
 	background-color:rgba(229,229,229,1);
 	}
+h1{
+font-size:28px;
+height:28px;
+color:#333;
+}
+h2{
+font-size:17px;
+color:#555;
+}
 
 #header{
 	background-color: rgba(241, 241, 241,1);
@@ -105,6 +114,68 @@ body{
 	}
 
 
+.books{
+	margin-left:290px;
+	margin-top:40px;
+	clear:both;
+	overflow:auto;
+}
+	.books li{
+		width:150px;
+		height:240px;
+		float:left;
+		-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		background: #fff;
+		position:relative;
+		margin:10px;
+	}
+
+
+.bookimage{
+	height: 160px;
+	width: 100%;
+	float: left;
+	background-color: #000;
+	margin-bottom:10px;
+	background-size: cover;
+}
+.imghover{
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:0;
+	display:block;
+	-webket-transition:0.2s;
+	transition:0.2s;
+}
+.imghover:hover{
+	opacity: 0.4;
+}
+
+.price{
+	background-color:#FFF;
+	right:10;
+	bottom:10;
+	position:absolute;
+	color:rgba(26,161,255,1);
+	font-size:14px;
+}
+
+.detail{
+	margin:10px;
+}
+
+	.booktitle{
+		color:#333;
+	}
+	.author{
+		font-size: 12px;
+		line-height: 15px;
+		color:#aaa;
+	}
+.price, .booktitle, .author{ cursor: hand;}
+.price:hover, .booktitle:hover, .author:hover{text-decoration: underline;}
 
 
 

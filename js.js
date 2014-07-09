@@ -1,4 +1,4 @@
-click();
+//click();
 
 function click(){
 	alert();
