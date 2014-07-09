@@ -1,0 +1,5 @@
+click();
+
+function click(){
+	alert();
+}

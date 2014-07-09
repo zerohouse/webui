@@ -1,0 +1,112 @@
+
+body{
+	padding: 0;
+	margin: 0;
+	background-color:rgba(229,229,229,1);
+	}
+
+#header{
+	background-color: rgba(241, 241, 241,1);
+	height:58px;
+
+}
+	#logo{
+	background-image: url('http://www.gstatic.com/android/market_images/web/play_logo_x2.png');
+	width: 183px;
+	height: 39px;
+	background-size: 183px 39px;
+	float: left;
+	margin:9.5px 30px;
+	}
+
+	#search{
+		width:417px;
+		height:30px;
+		outline:none;
+		margin:14px 0px;
+		border:1px solid #aaa;
+		font-size:18px;
+		padding-left:10px;
+		float:left;
+		border-radius: 1px 0px 0px 1px;
+	}
+	#search:hover{
+		border-color:rgba(168, 168 168, 1);
+	}
+	#search:focus, #search:active{
+		border-color:rgba(66, 133, 244, 1);
+	}
+
+	#schicon{
+		background-image: url('http://ssl.gstatic.com/gb/images/v1_b444d4f7.png');
+		background-size: 112px 1828px;
+		background-position: 0 -1786px;
+		display: inline-block;
+		margin: -1px;
+		height: 30px;
+		width: 30px;
+	}
+	#btn{
+		width:30px;
+		height:30px;
+		padding:0px 15px;
+		background-color: rgba(63,134,248,1);
+		float:left;
+		margin:14px 0px;
+		border-radius: 0px 3px 3px 0px;
+	}
+
+	#hrmenus{
+		float:right;
+		width:330;
+		height:60px;
+
+	}
+	#hrmenus li{
+		float:left;
+		height:30px;
+		display:block;
+		margin:10px 14px;
+	}
+
+
+
+
+
+
+
+#fixedmenu{
+	height:48px;
+	background-color:#FFF;
+
+}
+	#fixedmenu li{
+		float: left;
+		height: 48px;
+		line-height: 50px;
+		padding: 0 20px;
+		font-size: 14px;
+		color: rgba(138,138,138,1);
+		cursor:hand;
+	}
+	#fixedmenu li:hover{
+		background-color:rgba(243,243,243,1);
+
+	}
+
+	#fixedmenu ul{padding:0;margin:0;width:200px;}
+
+
+	#fixedmenu li ul li{
+		clear:both;
+		background-color:#FFF;
+		width:100%;
+
+	}
+
+
+
+
+
+
+
