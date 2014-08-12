@@ -1,45 +1,60 @@
 (function() {
   var httpRequest;
-  document.getElementById("bestbtn").onclick = function() { makeRequest('best.html',1); };
-  document.getElementById("sm1").onclick = function() { makeRequest('best.html',1); };
-  document.getElementById("sm2").onclick = function() { makeRequest('best.html',1); };
-  document.getElementById("sm3").onclick = function() { makeRequest('best.html',1); };
-  document.getElementById("genre").onclick = function() { toggleMenu(); };
-  document.getElementById("more").onclick = function() { toggleMore(); };
-  document.getElementById("littlemenu").style.display='none';
-  document.getElementById("morewrap").style.display='none';
+  var bestbtn = document.getElementById("bestbtn");
+  var sm1 = document.getElementById("sm1");
+  var sm2 = document.getElementById("sm2");
+  var sm3 = document.getElementById("sm3");
+  var genre = document.getElementById("genre");
+  var more = document.getElementById("more");
+  var littlemenu = document.getElementById("littlemenu");
+  var morewrap = document.getElementById("morewrap");
+  var moremore = document.getElementById("moremore");
+
+  bestbtn.onclick = function() { makeRequest('best.html',1); };
+  //bestbtn.addEventListener('onclick',makeRequest('best.html',1),false);
+  sm1.onclick = function() { makeRequest('best.html',1); };
+  sm2.onclick = function() { makeRequest('best.html',1); };
+  sm3.onclick = function() { makeRequest('best.html',1); };
+  moremore.onclick = function() { makeRequest('moremore.html',2); };
+
+  genre.onclick = function() { toggleMenu(); };
+  more.onclick = function() { toggleMore(); };
+
+  littlemenu.style.display='none';
+  morewrap.style.display='none';
   document.body.onclick = function() { hideMenu(); hideMore(); };
-  document.getElementById("moremore").onclick = function() { makeRequest('moremore.html',2); };
+  
 
   function toggleMenu(){ //장르 클릭시 메뉴 토글 
-    if(document.getElementById("littlemenu").style.display=='none'){
-    document.getElementById("littlemenu").style.display='block';
+
+    if(littlemenu.style.display=='none'){
+    littlemenu.style.display='block';
     }
     else{
-    document.getElementById("littlemenu").style.display='none';
+    littlemenu.style.display='none';
     }
     event.stopPropagation(); // 이벤트 스탑하여 바디 하이드 이벤트 방지 
   }
 
   function hideMenu(){ // 바디 클릭시 메뉴 하이드
-    if(document.getElementById("littlemenu").style.display=='block'){
-    document.getElementById("littlemenu").style.display='none';
+    if(littlemenu.style.display=='block'){
+    littlemenu.style.display='none';
     }
   }
 
   function toggleMore(){ // 더보기 (우상단 아이콘 클릭시 토글)
-    if(document.getElementById("morewrap").style.display=='none'){
-    document.getElementById("morewrap").style.display='block';
+    if(morewrap.style.display=='none'){
+    morewrap.style.display='block';
     }
     else{
-    document.getElementById("morewrap").style.display='none';
+    morewrap.style.display='none';
     }
     event.stopPropagation();
   }
 
   function hideMore(){ // 바디클릭시 토글
-    if(document.getElementById("morewrap").style.display=='block'){
-    document.getElementById("morewrap").style.display='none';
+    if(morewrap.style.display=='block'){
+    morewrap.style.display='none';
     }
   }
 
@@ -47,8 +62,11 @@
 
 
   function makeRequest(url, reqtype) {
+    
+    var loading = document.getElementById("loading");
+
     if (reqtype==1){ // 아약스 타입 1 = 책 더보기
-    document.getElementById("loading").style.display='block'; // 로딩이미지 보여줌
+    loading.style.display='block'; // 로딩이미지 보여줌
     }
     if (reqtype==2){ // 아약스 타입 2 = 메뉴 더 부르기
     event.stopPropagation(); // 메뉴 더부를때 바디이벤트때문에 자동으로 하이드 되므로 이벤트 스탑 
@@ -96,11 +114,12 @@
   }
 
   function loadMenu() { // 메뉴 더보기 
+    var moreicon = document.getElementById("moreicon");
     if (httpRequest.readyState === 4) {
       if (httpRequest.status === 200) {
-        document.getElementById("moreicon").innerHTML += httpRequest.responseText; // 리스폰스 더해주고
-        document.getElementById("moreicon").style.height=720; //메뉴 높이 조절해줌
-        document.getElementById("moremore").remove(); // 더보기는 삭제 
+        moreicon.innerHTML += httpRequest.responseText; // 리스폰스 더해주고
+        moreicon.style.height=720; //메뉴 높이 조절해줌
+        moremore.remove(); // 더보기는 삭제 
       } else {
         alert('There was a problem with the request.');
       }

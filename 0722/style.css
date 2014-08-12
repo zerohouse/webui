@@ -1,0 +1,24 @@
+
+ul{
+	list-style: none;
+}
+
+#container{
+	width:500px;
+	height:500px;
+	border:1px solid #555;
+	margin:auto;
+	margin-top:30px;
+	border-radius:50%;
+}
+#container::after{
+	position:absolute;
+	width:30px;
+	height:30px;
+	background-color:#ddd;
+	display:block
+}
+#container:hover{
+	background-color:#ddd;
+
+}
