@@ -6,11 +6,12 @@
 </head>
 <body>
 
-<div id='header'>
+<header>
 	<span id='logo'></span>
 	<input id='search' type='text' placeholder='검색'/>
-	<a id='btn'><span id='schicon'></span></a>
+	
 	<div id='hrmenus'>
+		<a id='btn'><span id='schicon'></span></a>
 		<li id='username'>+성호</li>
 		<li id='more'>
 		</li>
@@ -19,24 +20,23 @@
 		<li id='profileimg'></li>
 	</div>
 	<div id='morewrap'>
-		<div id='tmp' style='opacity:0'></div>
-		<div id='tmp2' style='opacity:0'></div>
 		<div id='s2'></div>
 		<div id='s1'></div>
-		<div id='moreicon' >
-			<li><a id='m1' class='each'  href='https://www.google.co.kr/' target='_blank'><span class='icon' id='icon1'></span>검색</a></li>
-			<li><a id='m2' class='each' href='https://plus.google.com/' target='_blank'><span class='icon' id='icon2'></span>+성호</a></li>
-			<li><a id='m3' class='each' href='https://www.google.co.kr/maps/' target='_blank'><span class='icon' id='icon3'></span>지도</a></li>
-			<li><a id='m4' class='each' href='https://play.google.com/store' target='_blank'><span class='icon' id='icon4'></span>Play</a></li>
-			<li><a id='m5' class='each' href='https://news.google.co.kr/' target='_blank'><span class='icon' id='icon5'></span>뉴스</a></li>
-			<li><a id='m6' class='each' href='https://mail.google.com/' target='_blank'><span class='icon' id='icon6' ></span>Gmail</a></li>
-			<li><a id='m7' class='each' href='https://drive.google.com/' target='_blank'><span class='icon' id='icon7' ></span>드라이브</a></li>
-			<li><a id='m8' class='each' href='https://youtube.com' target='_blank'><span class='icon' id='icon8'></span>Youtube</a></li>
-			<li><a id='m9' class='each'  href='https://www.google.com/calendar/' target='_blank'><span class='icon' id='icon9'></span>캘린더</li></a>
+		<div id='moreicon'>
+			<li id='m1'><a class='each'><span class='icon' id='icon1'></span>검색</a></li>
+			<li id='m2'><a class='each'><span class='icon' id='icon2'></span>+성호</a></li>
+			<li id='m3'><a class='each'><span class='icon' id='icon3'></span>지도</a></li>
+			<li id='m4'><a class='each'><span class='icon' id='icon4'></span>Play</a></li>
+			<li id='m5'><a class='each'><span class='icon' id='icon5'></span>뉴스</a></li>
+			<li id='m6'><a class='each'><span class='icon' id='icon6' ></span>Gmail</a></li>
+			<li id='m7'><a class='each'><span class='icon' id='icon7' ></span>드라이브</a></li>
+			<li id='m8'><a class='each'><span class='icon' id='icon8'></span>Youtube</a></li>
+			<li id='m9'><a class='each'><span class='icon' id='icon9'></span>캘린더</li></a>
 			<div id='moremore'>더보기</div>
 		</div>
 	</div>
-</div>
+</header>
+
 
 <div id='fixedmenu'>
 	<li id='leftmenu'>
@@ -69,7 +69,7 @@
 			<h1>주간 베스트셀러</h1>
 			<h2>한주간 가장 사랑을 많이 받은 도서</h2>
 		</div>
-		<div class='bookcontainer'>
+		<div class='bookcontainer' id='bookcontainer'>
 			<li>
 				<span class='bookimage' style="background-image:url('https://encrypted.google.com/books/images/frontcover/BxlaP6loV6IC?fife=w300-rw')">
 					<span class='imghover'></span>
@@ -185,13 +185,47 @@
 </div>
 <div id='loading'></div>
 
-
+<div id='dragarea'>
+</div>
 
 
 
 </div>
+  <div id='hiddentemplete' style='display:none'><li>
+  	<span class='bookimage' style='background-image:url(%backimageurl%)'>
+          <span class='imghover'></span>
+        </span>
+        <div class='detail'>
+          <a class='price'>1500</a>
+          <a class='booktitle'>%booktitle%</a><br>
+          <a class='author'>%author%</a>
+        </div>
+      </li></div>
 
+<script type="templete" id='templete'>
+			<li>
+				<span class='bookimage' style="background-image:url('%image%')">
+					<span class='imghover'></span>
+				</span>
+				<div class='detail'>
+					<a class='price'>%price%</a>
+					<a class='booktitle'>%Name%</a><br>
+					<a class='author'>%author%</a>
+				</div>
+			</li>
+</script>
 
+<script type="templete" id="allbooks">
+<div class="books">
+		<div class="bookheader">
+			<h1>주간 베스트셀러</h1>
+			<h2>한주간 가장 사랑을 많이 받은 도서</h2>
+		</div>
+		<div class="bookcontainer" id="bookcontainer">
+		%bookcontents%
+		</div>
+	</div>
+</script>
 
 </body>
 <script src='js.js'></script>
